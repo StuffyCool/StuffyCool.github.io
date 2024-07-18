@@ -78,7 +78,7 @@
     <div class="container">
         <h1>Welcome to my Modern Web Page</h1>
         <p>This is a simple example of modern HTML with embedded CSS and JavaScript. It includes gradients, transitions, and tabs.</p>
-        <button onclick="showAlert()">Click Me!</button>
+        <button onclick="downloadFile()">Click Me!</button>
         <div class="tabs">
             <div class="tab active">Tab 1</div>
             <div class="tab">Tab 2</div>
@@ -88,11 +88,22 @@
 
     <script>
         // JavaScript code
-        function showAlert() {
-            alert('You clicked the button!');
+        function downloadFile() {
+            // Replace with the actual path to your file
+            const url = '/path/to/your/file.pdf';
+            
+            // Create a temporary anchor element
+            const anchor = document.createElement('a');
+            anchor.href = url;
+            
+            // Set the download attribute to specify the filename
+            anchor.download = 'filename.pdf';
+            
+            // Programmatically trigger a click event on the anchor element
+            anchor.click();
         }
 
-        // Tab functionality
+        // Tab functionality (unchanged from your original code)
         const tabs = document.querySelectorAll('.tab');
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
